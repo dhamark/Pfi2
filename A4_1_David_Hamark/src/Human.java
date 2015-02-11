@@ -20,7 +20,7 @@ public Human (String humanName){
 		this.dog = dogName;
 	}
 	
-	
+	//Skapar funktion för att printa texten i GUIen. 
 	public String getInfo(){
 		String s =  ""; 
 		if (dog != null){
@@ -29,7 +29,6 @@ public Human (String humanName){
 			return s;
 
 		}else{
-
 			s = getName() + " " + "does not own a dog.";
 			return s;
 			

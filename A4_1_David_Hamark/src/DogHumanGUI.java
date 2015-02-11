@@ -20,7 +20,7 @@ public class DogHumanGUI extends JFrame {
 	private JTextField textField_1;
 	private Human human;
 	private Dog dog; 
-	// private Dog dog; tror inte den behövs
+
 	/**
 	 * Launch the application.
 	 */
@@ -50,7 +50,7 @@ public class DogHumanGUI extends JFrame {
 		contentPane.setLayout(null);
 		
 
-		//Textboxarna
+																	//Textboxarna
 		JTextArea textArea = new JTextArea();
 		textArea.setBounds(49, 178, 469, 77);
 		contentPane.add(textArea);
@@ -58,7 +58,7 @@ public class DogHumanGUI extends JFrame {
 		JTextArea textArea_1 = new JTextArea();
 		textArea_1.setBounds(49, 267, 469, 51);
 		contentPane.add(textArea_1);
-		//Texter på boxarna
+																	//Texter på boxarna
 		JLabel lblInfo = new JLabel("Info");
 		lblInfo.setBounds(49, 161, 61, 16);
 		contentPane.add(lblInfo);
@@ -67,7 +67,7 @@ public class DogHumanGUI extends JFrame {
 		lblErrorMessage.setBounds(49, 253, 134, 16);
 		contentPane.add(lblErrorMessage);
 		
-		
+															//Knapp för att skapa människa
 		JButton btnNewHuman = new JButton("New Human");
 		btnNewHuman.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -83,7 +83,7 @@ public class DogHumanGUI extends JFrame {
 			);
 		btnNewHuman.setBounds(262, 24, 117, 29);
 		contentPane.add(btnNewHuman);
-		
+															//Knapp för att skapa hund
 		JButton btnBuyDog = new JButton("Buy Dog");
 		btnBuyDog.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -99,7 +99,7 @@ public class DogHumanGUI extends JFrame {
 		});
 		btnBuyDog.setBounds(262, 65, 117, 29);
 		contentPane.add(btnBuyDog);
-		
+															//Printar texten i textfältet.
 		JButton btnNewButton = new JButton("Print Info");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
