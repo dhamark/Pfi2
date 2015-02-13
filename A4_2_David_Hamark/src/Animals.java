@@ -51,14 +51,20 @@ public class Animals extends JFrame {
 		animals = new ArrayList <Animal>();
 		
 		animals.add(new Dog("Canis Latrans", 4, false, "Kallelito"));
+		Cat cat = new Cat("lynx lynx", 3, 7);
+		cat.setFriendlyName("misan");
+		animals.add(cat);
 		animals.add(new Cat("Lynx Lynx", 3, 7, "Kissemissen"));
 		animals.add(new Dog("Canis Latrans", 4, true, "Fido"));
 		animals.add(new Snake("Skallrus Huggus", false));
-		animals.add(new Cat("MjauMjau", 5, 1, "Mjamson"));
+		animals.add(new Cat("MjauMjau", 5, 1));
+		Cat cat2 = (new Cat("MjauMjau", 5, 1));
+		cat2.setFriendlyName("Mjamson");
+		animals.add(cat2);
 		animals.add(new Snake("Huggus Ormus", true));
 		animals.add(new Dog("Canis Latrans", 3, false, "Dumhuvud"));
 		animals.add(new Snake("Majsus Ormus", false));
-		animals.add(new Cat("Jamson Kattskrellus", 3, 5, ""));
+		animals.add(new Cat("Jamson Kattskrellus", 3, 5));
 		animals.add(new Dog("Canis Latrans", 5, true, "Wolfgang"));
 		animals.add(new Snake("Pyton Regius", true));
 		

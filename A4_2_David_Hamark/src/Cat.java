@@ -1,24 +1,29 @@
 
 public class Cat extends Mammal{
-	
+
 	private int numberOfLives; 
-	
-public Cat(String latinName, int gestationTime, int numberOfLives, String friendlyName) {
+
+	public Cat(String latinName, int gestationTime, int numberOfLives, String friendlyName) {
 		super(latinName, gestationTime);
 		this.numberOfLives = numberOfLives;
 		super.setFriendlyName(getFriendlyName());
-		
+
+	}
+	
+	public Cat(String latinName, int gestationTime, int numberOfLives) {
+		super(latinName, gestationTime);
+		this.numberOfLives = numberOfLives;
 	}
 
-public int getNumberOfLives() {
-	return numberOfLives;
-}
+	public int getNumberOfLives() {
+		return numberOfLives;
+	}
 
-public int setNumberOfLives(int i) {
-	return this.numberOfLives = i;
-}
+	public int setNumberOfLives(int i) {
+		return this.numberOfLives = i;
+	}
 
-public String getInfo() {
-	return "The cat, " + "\"" + getFriendlyName() + "\"" + ", latin: " + "\"" + getLatinName() + "\"," + " nurses for " + getGestationTime() + " month(s)" + " and has " + getNumberOfLives() + " lives.";
-}
+	public String getInfo() {
+		return "The cat, " + "\"" + getFriendlyName() + "\"" + ", latin: " + "\"" + getLatinName() + "\"," + " nurses for " + getGestationTime() + " month(s)" + " and has " + getNumberOfLives() + " lives.";
+	}
 }

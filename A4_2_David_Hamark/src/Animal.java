@@ -3,7 +3,7 @@ public abstract class Animal {
 
 	
 	private String latinName;
-	private String friendlyName;
+	private String friendlyName = "no name";
 	
 	
 	public Animal (String latinName){
