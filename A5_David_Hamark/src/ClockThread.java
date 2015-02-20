@@ -1,10 +1,30 @@
+import java.util.Calendar;
 
-public class ClockThread {
 
+public class ClockThread extends Thread {
+
+	private ClockInterface clockInterface; 
 	
- new Runnable() {
-	public void run() {
+	public ClockThread(ClockInterface ci){
+		this.clockInterface = ci; 
 		
+	}
+	@Override
+	public void run() {
+		while (true){
+			
+			Calendar cal = Calendar.getInstance();
+			clockInterface.update(cal.get(Calendar.HOUR_OF_DAY),(cal.get(Calendar.MINUTE)), (cal.get(Calendar.SECOND)));
+		
+			try {
+				Thread.sleep(900);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
+	}
+		}
 	
 }
-	}
+	
+ 
