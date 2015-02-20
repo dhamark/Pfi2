@@ -1,3 +1,5 @@
+import java.awt.Color;
+
 
 public class ClockLogic implements ClockInterface {
 
@@ -15,13 +17,14 @@ public class ClockLogic implements ClockInterface {
 	}
 	
 	public void setAlarm(int hours, int minutes) {
-		this.alarmHour = alarmHour;
-		this.alarmMinute = alarmMinute; 
+		this.alarmHour = hours;
+		this.alarmMinute = minutes; 
 	}
 	
+	
 	public void clearAlarm(){
-		
-		
+	this.alarmHour = 100;
+	this.alarmMinute = 100; 
 	}
 
 	@Override
@@ -56,8 +59,9 @@ public class ClockLogic implements ClockInterface {
 		
 
 		  if (this.alarmHour == hours && this.alarmMinute == minutes) {
-			  System.out.println("ALARM DONE");
+			  
 			  clockGUI.alarm(true);
+			  
 		  }
 
 	}

@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
+import java.awt.Color;
+import java.awt.Font;
 
 
 public class DigitalClockGUI extends JFrame {
@@ -27,8 +29,9 @@ public class DigitalClockGUI extends JFrame {
 	JLabel lblErrorMsg = new JLabel("");
 	JLabel lblAlarmMsg = new JLabel("");
 	
+	JLabel bakgrund = new JLabel("");
 	
-	//Random rand = new Random(); //Implementerar randomfunktionen för alarmet
+	
 	
 	/**
 	 * Launch the application.
@@ -50,6 +53,7 @@ public class DigitalClockGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public DigitalClockGUI() {
+		setBackground(new Color(245, 222, 179));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -58,6 +62,7 @@ public class DigitalClockGUI extends JFrame {
 		contentPane.setLayout(null);
 		
 		JButton btnSetAlarm = new JButton("Set Alarm");
+		btnSetAlarm.setFont(new Font("Lithos Pro", Font.PLAIN, 13));
 		btnSetAlarm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			    int hourCheck = Integer.parseInt(textFieldHour.getText());
@@ -65,7 +70,7 @@ public class DigitalClockGUI extends JFrame {
 
 			    if (hourCheck < 0 || hourCheck > 23 || minuteCheck < 0
 			      || minuteCheck > 59) {
-			     textAlarmSet.setText("NEJ");
+			     textAlarmSet.setText("Not valid");
 			    } else {
 			     String s4 = "";
 			     String s5 = "";
@@ -77,7 +82,6 @@ public class DigitalClockGUI extends JFrame {
 				      s5 = "0";
 				     }
 				     
-				  
 				     textAlarmSet.setText(s4 + hourCheck + ":" + s5 + minuteCheck);
 				     
 				     clockLogic.setAlarm(hourCheck, minuteCheck);
@@ -87,10 +91,8 @@ public class DigitalClockGUI extends JFrame {
 		btnSetAlarm.setBounds(17, 230, 117, 29);
 		contentPane.add(btnSetAlarm);
 		
-		
-		
-		
 		JButton btnClearAlarm = new JButton("Clear Alarm");
+		btnClearAlarm.setFont(new Font("Lithos Pro", Font.BOLD, 13));
 		btnClearAlarm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textFieldHour.setText("");
@@ -112,28 +114,46 @@ public class DigitalClockGUI extends JFrame {
 		contentPane.add(textFieldMin);
 		textFieldMin.setColumns(10);
 		
-		JLabel lblHours = new JLabel("Hours");
-		lblHours.setBounds(26, 196, 61, 16);
-		contentPane.add(lblHours);
-		
-		JLabel lblMinutes = new JLabel("Minutes");
-		lblMinutes.setBounds(232, 196, 61, 16);
-		contentPane.add(lblMinutes);
-		
 		textAlarmSet = new JTextField();
+		textAlarmSet.setFont(new Font("Lucida Grande", Font.BOLD, 13));
 		textAlarmSet.setBounds(269, 229, 134, 28);
 		contentPane.add(textAlarmSet);
 		textAlarmSet.setColumns(10);
 		
 		textClock = new JTextField();
+		textClock.setFont(new Font("Marker Felt", Font.BOLD, 22));
 		textClock.setBounds(245, 41, 186, 55);
 		contentPane.add(textClock);
 		textClock.setColumns(10);
 		
-		JLabel label = new JLabel("New label");
-		label.setIcon(new ImageIcon(DigitalClockGUI.class.getResource("/images/pizzacomplete1.png")));
-		label.setBounds(0, 4, 444, 174);
-		contentPane.add(label);
+		JPanel panel = new JPanel();
+		panel.setBounds(17, 196, 61, 16);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblHours = new JLabel("Hours");
+		lblHours.setBounds(0, 0, 61, 16);
+		panel.add(lblHours);
+		lblHours.setFont(new Font("Lao MN", Font.BOLD, 15));
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(215, 196, 104, 16);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblMinutes = new JLabel("Minutes");
+		lblMinutes.setBounds(0, 0, 80, 16);
+		panel_1.add(lblMinutes);
+		lblMinutes.setFont(new Font("Lao MN", Font.BOLD, 15));
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon(DigitalClockGUI.class.getResource("/images/pizzacomplete1.png")));
+		lblNewLabel.setBounds(6, 6, 438, 266);
+		contentPane.add(lblNewLabel);
+		
+		JLabel bakgrund = new JLabel("");
+		bakgrund.setBounds(6, 0, 438, 272);
+		contentPane.add(bakgrund);
 		
 				clockLogic = new ClockLogic(this);
 
@@ -145,6 +165,9 @@ public class DigitalClockGUI extends JFrame {
 			public void alarm (boolean activate){
 				if (true) {
 					textAlarmSet.setText("ALARM!");
+				
+					bakgrund.setBackground(new Color(28, 132, 170));
+					
 				}
 				
 	}
